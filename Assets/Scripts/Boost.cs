@@ -9,21 +9,22 @@ public class Boost : MonoBehaviour
 {
     public int counter = 0;
     public CarController carController;
-    public Canvas can;
     float jump = 1f;
 
 
     private void Start()
     {
         carController = gameObject.GetComponentInChildren<CarController>();
-        can = can.GetComponent<Canvas>();
     }
 
     private void OnTriggerExit(Collider other)
     {
-        if (other.tag == "Booster")
+        if (counter < 2)
         {
-            counter += 1;
+            if (other.tag == "Booster")
+            {
+                counter += 1;
+            }
         }
     }
 
@@ -42,20 +43,6 @@ public class Boost : MonoBehaviour
         {
             transform.localPosition = new Vector3(transform.localPosition.x, transform.localPosition.y + jump, transform.localPosition.z);
         }
-
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            can.enabled = true;
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
-            foreach (AudioSource source in aSources)
-            {
-                source.Pause();
-            }
-        }
-
     }
 }
 

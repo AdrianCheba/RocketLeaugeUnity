@@ -5,6 +5,8 @@ using UnityEngine;
 public class BoostReset : MonoBehaviour
 {
     GameObject car;
+    public Boost b;
+    public GameObject partner;
     Vector3 orginalPos;
     public float targetTime = 60.0f;
     int flaga;
@@ -12,15 +14,20 @@ public class BoostReset : MonoBehaviour
     private void Start()
     {
         orginalPos = transform.localPosition;
-        car = GameObject.FindGameObjectWithTag("P1");
+        car = GameObject.FindGameObjectWithTag("Player");
+        partner = GameObject.FindGameObjectWithTag("Player");
+        b = partner.GetComponent<Boost>();
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if (car.gameObject.CompareTag("P1"))
+        if (b.counter < 2)
         {
-            transform.localPosition = new Vector3(0, 500, 0);
-            flaga = 1;
+            if (car.gameObject.CompareTag("Player"))
+            {
+                transform.localPosition = new Vector3(0, 500, 0);
+                flaga = 1;
+            }
         }
        
     }
