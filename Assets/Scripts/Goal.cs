@@ -1,12 +1,28 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
     public int goal = 0;
     public int goal2 = 0;
+    public Text goalTxt1;
+    public Text goalTxt2;
+    public Text goalTxt3;
+    public float targetTime = 0;
+    public int targetTime2 = 0;
+    public int targetTime3 = 0;
+
+    private void Start()
+    {
+        goalTxt1 = goalTxt1.GetComponent<Text>();
+        goalTxt2 = goalTxt2.GetComponent<Text>();
+        goalTxt3 = goalTxt3.GetComponent<Text>();
+    }
+
     private void OnTriggerExit(Collider other)
+
     {
         if (other.tag == "Goal")
         {
@@ -23,16 +39,25 @@ public class Goal : MonoBehaviour
         }
     }
 
-    private void OnCollisionEnter(Collision collision)
+    private void FixedUpdate()
     {
-        if (collision.gameObject.tag == "Cover1")
-        {
-            transform.localPosition = new Vector3(transform.localPosition.x - 2 ,transform.localPosition.y, transform.localPosition.z);
-        }
+        goalTxt1.text = "" + goal;
+        goalTxt2.text = "" + goal2;
+        targetTime += Time.deltaTime;
+        targetTime2 = (int)targetTime / 60;
+        targetTime3 = (int)targetTime % 60; 
 
-        if (collision.gameObject.tag == "Cover2")
+        goalTxt3.text = "0" + targetTime2 + " : " + "0" + targetTime3;
+        if(targetTime3 >= 10) goalTxt3.text = "0" + targetTime2 + " : " + targetTime3;
+
+        if(targetTime2 == 5)
         {
-            transform.localPosition = new Vector3(transform.localPosition.x + 2 ,transform.localPosition.y, transform.localPosition.z);
+            Time.timeScale = 0;
+            AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+            foreach (AudioSource source in aSources)
+            {
+                source.Pause();
+            }
         }
     }
 }
