@@ -56,26 +56,66 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay()
     {
-        car2.transform.localPosition = new Vector3(0, 5000, 0);
-        car3.transform.localPosition = new Vector3(0, 5000, 0);
+        car1.SetActive(isActiveAndEnabled);
         carMenu.enabled = false;
         groundMenu.enabled = true;
     } 
 
     public void BtnPlay2()
     {
-        car1.transform.localPosition = new Vector3(0, 5000, 0);
-        car3.transform.localPosition = new Vector3(0, 5000, 0);
+        car2.SetActive(isActiveAndEnabled);
         carMenu.enabled = false;
         groundMenu.enabled = true;
     } 
 
     public void BtnPlay3()
     {
-        car2.transform.localPosition = new Vector3(0, 5000, 0);
-        car1.transform.localPosition = new Vector3(0, 5000, 0);
+        car3.SetActive(isActiveAndEnabled);
         carMenu.enabled = false;
         groundMenu.enabled = true;
+    } 
+    
+    public void BtnPlay4()
+    {
+      
+        groundMenu.enabled = false;
+        HUD.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource source in aSources)
+        {
+            source.Play();
+        }
+    }    
+
+    public void BtnPlay5()
+    {
+        groundMenu.enabled = false;
+        HUD.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource source in aSources)
+        {
+            source.Play();
+        }
+    }   
+    
+    public void BtnPlay6()
+    {
+        groundMenu.enabled = false;
+        HUD.enabled = true;
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        Time.timeScale = 1;
+        AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+        foreach (AudioSource source in aSources)
+        {
+            source.Play();
+        }
     }
     public void BtnBack()
     {
