@@ -5,7 +5,8 @@ using UnityEngine.UI;
 
 public class Pause : MonoBehaviour
 {
-    public Canvas can; 
+    public Canvas can;
+    int flag = 0;
 
     void Start()
     {
@@ -14,16 +15,38 @@ public class Pause : MonoBehaviour
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Escape))
+        if (flag == 0)
         {
-            can.enabled = true;
-            Time.timeScale = 0;
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None;
-            AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
-            foreach (AudioSource source in aSources)
+            if (Input.GetKeyDown(KeyCode.Escape))
             {
-                source.Pause();
+                can.enabled = true;
+                Time.timeScale = 0;
+                Cursor.visible = true;
+                Cursor.lockState = CursorLockMode.None;
+                AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+                foreach (AudioSource source in aSources)
+                {
+                    source.Pause();
+                }
+
+                flag = 1;
+            }
+        }
+        else if(flag == 1)
+        {
+            if (Input.GetKeyDown(KeyCode.Escape))
+            {
+                can.enabled = false;
+                Time.timeScale = 1;
+                Cursor.visible = false;
+                Cursor.lockState = CursorLockMode.Locked;
+                AudioSource[] aSources = FindObjectsOfType(typeof(AudioSource)) as AudioSource[];
+                foreach (AudioSource source in aSources)
+                {
+                    source.Play();
+                }
+
+                flag = 0;
             }
         }
     }

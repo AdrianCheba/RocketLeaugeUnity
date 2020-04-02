@@ -10,6 +10,7 @@ public class Menu : MonoBehaviour
     public Canvas HUD;
     public Canvas carMenu;
     public Canvas groundMenu;
+    public Canvas pause;
     public Button btnStart;
     public Button btnPlay;
     public Button btnPlay2;
@@ -30,6 +31,7 @@ public class Menu : MonoBehaviour
     {
         can = can.GetComponent<Canvas>();
         HUD = HUD.GetComponent<Canvas>();
+        pause = pause.GetComponent<Canvas>();
         carMenu = carMenu.GetComponent<Canvas>();
         groundMenu = groundMenu.GetComponent<Canvas>();
         btnStart = btnStart.GetComponent<Button>();
@@ -51,6 +53,7 @@ public class Menu : MonoBehaviour
         HUD.enabled = false;
         carMenu.enabled = false;
         groundMenu.enabled = false;
+        pause.enabled = false;
         Time.timeScale = 0;
     }
 
@@ -63,6 +66,7 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay()
     {
+        car1.SetActive(isActiveAndEnabled);
         car2.SetActive(false);
         car3.SetActive(false);
         carMenu.enabled = false;
@@ -71,6 +75,7 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay2()
     {
+        car2.SetActive(isActiveAndEnabled);
         car1.SetActive(false);
         car3.SetActive(false);
         carMenu.enabled = false;
@@ -79,6 +84,7 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay3()
     {
+        car3.SetActive(isActiveAndEnabled);
         car2.SetActive(false);
         car1.SetActive(false);
         carMenu.enabled = false;
@@ -87,6 +93,7 @@ public class Menu : MonoBehaviour
     
     public void BtnPlay4()
     {
+        Ground.SetActive(isActiveAndEnabled);
         Ground2.SetActive(false);
         Ground3.SetActive(false);
         groundMenu.enabled = false;
@@ -103,6 +110,7 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay5()
     {
+        Ground2.SetActive(isActiveAndEnabled);
         Ground.SetActive(false);
         Ground3.SetActive(false);
         groundMenu.enabled = false;
@@ -119,6 +127,7 @@ public class Menu : MonoBehaviour
     
     public void BtnPlay6()
     {
+        Ground3.SetActive(isActiveAndEnabled);
         Ground2.SetActive(false);
         Ground.SetActive(false);
         groundMenu.enabled = false;
