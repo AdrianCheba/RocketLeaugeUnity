@@ -22,6 +22,9 @@ public class Menu : MonoBehaviour
     public GameObject car1;
     public GameObject car2;
     public GameObject car3;
+    public GameObject Ground;
+    public GameObject Ground2;
+    public GameObject Ground3;
 
     void Start()
     {
@@ -41,6 +44,10 @@ public class Menu : MonoBehaviour
         car1 = GameObject.Find("car1");
         car2 = GameObject.Find("car2");
         car3 = GameObject.Find("car3");
+        Ground = GameObject.Find("FootballPitch");
+        Ground2 = GameObject.Find("FootballPitch2");
+        Ground3 = GameObject.Find("FootballPitch3");
+
         HUD.enabled = false;
         carMenu.enabled = false;
         groundMenu.enabled = false;
@@ -56,28 +63,32 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay()
     {
-        car1.SetActive(isActiveAndEnabled);
+        car2.SetActive(false);
+        car3.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
     } 
 
     public void BtnPlay2()
     {
-        car2.SetActive(isActiveAndEnabled);
+        car1.SetActive(false);
+        car3.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
     } 
 
     public void BtnPlay3()
     {
-        car3.SetActive(isActiveAndEnabled);
+        car2.SetActive(false);
+        car1.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
     } 
     
     public void BtnPlay4()
     {
-      
+        Ground2.SetActive(false);
+        Ground3.SetActive(false);
         groundMenu.enabled = false;
         HUD.enabled = true;
         Cursor.visible = false;
@@ -92,6 +103,8 @@ public class Menu : MonoBehaviour
 
     public void BtnPlay5()
     {
+        Ground.SetActive(false);
+        Ground3.SetActive(false);
         groundMenu.enabled = false;
         HUD.enabled = true;
         Cursor.visible = false;
@@ -106,6 +119,8 @@ public class Menu : MonoBehaviour
     
     public void BtnPlay6()
     {
+        Ground2.SetActive(false);
+        Ground.SetActive(false);
         groundMenu.enabled = false;
         HUD.enabled = true;
         Cursor.visible = false;
