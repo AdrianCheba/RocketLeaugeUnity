@@ -21,7 +21,7 @@ MonoBehaviour:
   m_ShowMode: 4
   m_Title: 
   m_RootView: {fileID: 6}
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
   m_Maximized: 1
 --- !u!114 &2
@@ -45,10 +45,10 @@ MonoBehaviour:
     y: 30
     width: 1920
     height: 947
-  m_MinSize: {x: 683, y: 348}
-  m_MaxSize: {x: 12008, y: 8048}
+  m_MinSize: {x: 683, y: 498}
+  m_MaxSize: {x: 14004, y: 14048}
   vertical: 0
-  controlID: 128
+  controlID: 116
 --- !u!114 &3
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -121,14 +121,14 @@ MonoBehaviour:
     y: 673
     width: 1531
     height: 274
-  m_MinSize: {x: 102, y: 124}
-  m_MaxSize: {x: 4002, y: 4024}
-  m_ActualView: {fileID: 19}
+  m_MinSize: {x: 232, y: 274}
+  m_MaxSize: {x: 10002, y: 10024}
+  m_ActualView: {fileID: 14}
   m_Panes:
   - {fileID: 14}
   - {fileID: 19}
-  m_Selected: 1
-  m_LastSelected: 0
+  m_Selected: 0
+  m_LastSelected: 1
 --- !u!114 &6
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -151,7 +151,7 @@ MonoBehaviour:
     y: 0
     width: 1920
     height: 997
-  m_MinSize: {x: 950, y: 398}
+  m_MinSize: {x: 950, y: 300}
   m_MaxSize: {x: 10000, y: 10000}
 --- !u!114 &7
 MonoBehaviour:
@@ -217,10 +217,10 @@ MonoBehaviour:
     y: 0
     width: 1531
     height: 947
-  m_MinSize: {x: 406, y: 348}
-  m_MaxSize: {x: 8006, y: 8048}
+  m_MinSize: {x: 406, y: 498}
+  m_MaxSize: {x: 10002, y: 14048}
   vertical: 1
-  controlID: 63
+  controlID: 13
 --- !u!114 &10
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -245,7 +245,7 @@ MonoBehaviour:
   m_MinSize: {x: 406, y: 224}
   m_MaxSize: {x: 8006, y: 4024}
   vertical: 0
-  controlID: 110
+  controlID: 14
 --- !u!114 &11
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -371,20 +371,20 @@ MonoBehaviour:
     m_ShowAllHits: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets/Thaleah_PixelFont
+    - Assets/Scripts
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets/Thaleah_PixelFont
+  - Assets/Scripts
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\Adrian Cheba\Documents\GitHub\RocketLeaugeUnity
   m_LockTracker:
     m_IsLocked: 0
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 1331}
-    m_SelectedIDs: 96400000
-    m_LastClickedID: 16534
-    m_ExpandedIDs: 000000001e2800005a2800004e2b00009e2b00004c2d0000f62d0000a42e0000bc2e0000162f0000782f000098310000023200004c3200009e32000000330000683300008e330000c4330000e63300004a340000a0340000be350000a2360000ce3d00009640000000ca9a3b
+    scrollPos: {x: 0, y: 435}
+    m_SelectedIDs: f0300000
+    m_LastClickedID: 12528
+    m_ExpandedIDs: 00000000202800005c28000050290000562b0000a62b0000582d0000022e0000b02e0000c82e0000222f0000842f0000a8310000123200005c320000ae32000010330000783300009e330000d6330000f83300005c340000b2340000d8350000bc360000103e000000ca9a3b
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -412,7 +412,7 @@ MonoBehaviour:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs: 
     m_LastClickedID: 0
-    m_ExpandedIDs: 000000001e2800005a2800004e2b00009e2b00004c2d0000f62d0000a42e0000bc2e0000162f0000782f000098310000023200004c3200009e32000000330000683300008e330000c4330000e63300004a340000a0340000be350000a2360000ce3d0000
+    m_ExpandedIDs: 00000000202800005c28000050290000562b0000a62b0000582d0000022e0000b02e0000c82e0000222f0000842f0000a8310000123200005c320000ae32000010330000783300009e330000d6330000f83300005c340000b2340000d8350000bc360000103e0000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -439,7 +439,7 @@ MonoBehaviour:
   m_ListAreaState:
     m_SelectedInstanceIDs: 
     m_LastClickedInstanceID: 0
-    m_HadKeyboardFocusLastEvent: 1
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs: c6230000000000007e370000
     m_RenameOverlay:
       m_UserAcceptedRename: 0
@@ -533,21 +533,21 @@ MonoBehaviour:
       scrollPos: {x: 0, y: 0}
       m_SelectedIDs: 
       m_LastClickedID: 0
-      m_ExpandedIDs: 7e5effffa05effff7460ffffce71fffff071ffffc473ffff908afffffee7ffffdefbffff243a0000f8d80000d2da0000f0db0000bcdc0000
+      m_ExpandedIDs: defbfffffe380000
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: HUD
+        m_OriginalName: HUD
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
           y: 0
           width: 0
           height: 0
-        m_UserData: 0
+        m_UserData: 14590
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_ClientGUIView: {fileID: 4}
       m_SearchString: 
@@ -589,9 +589,9 @@ MonoBehaviour:
   m_isRotationLocked: 0
   m_AudioPlay: 0
   m_Position:
-    m_Target: {x: 676.376, y: 318.6424, z: 16.253897}
+    m_Target: {x: 576.6527, y: 284.75854, z: 10.88637}
     speed: 2
-    m_Value: {x: 676.376, y: 318.6424, z: 16.253897}
+    m_Value: {x: 576.6527, y: 284.75854, z: 10.88637}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -623,15 +623,15 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: -1}
   m_Size:
-    m_Target: 802.699
+    m_Target: 1332.8055
     speed: 2
-    m_Value: 802.699
+    m_Value: 1332.8055
   m_Ortho:
     m_Target: 1
     speed: 2
     m_Value: 1
   m_ShowGlobalGrid: 1
-  m_LastSceneViewRotation: {x: -0.12062461, y: -0.48429933, z: 0.06425779, w: -0.8641613}
+  m_LastSceneViewRotation: {x: -0.08717229, y: 0.89959055, z: -0.21045254, w: -0.3726226}
   m_LastSceneViewOrtho: 0
   m_ReplacementShader: {fileID: 0}
   m_ReplacementString: 

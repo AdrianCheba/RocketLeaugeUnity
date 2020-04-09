@@ -2,21 +2,38 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class Pause : MonoBehaviour
 {
     public Canvas can;
-    int flag = 0;
+    public Canvas menu;
+    public Canvas menu2;
+    public Canvas menu3;
+    public Button btnResume;
+    public Button btnMenu;
+    public GameObject ball;
+    public GameObject car;
+    public Goal goal;
+    Vector3 startPos;
 
     void Start()
     {
         can = can.GetComponent<Canvas>();
+        menu = menu.GetComponent<Canvas>();
+        menu2 = menu2.GetComponent<Canvas>();
+        menu3 = menu3.GetComponent<Canvas>();
+        btnMenu = btnMenu.GetComponent<Button>();
+        btnResume = btnResume.GetComponent<Button>();
+        ball = GameObject.Find("Ball");
+        car = GameObject.FindGameObjectWithTag("Player");
+        startPos = car.transform.localPosition;
+        goal = ball.GetComponent<Goal>();
     }
 
     void Update()
     {
-        if (flag == 0)
-        {
+        if (menu.enabled == false & menu2.enabled == false & menu3.enabled == false) {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
                 can.enabled = true;
@@ -28,14 +45,12 @@ public class Pause : MonoBehaviour
                 {
                     source.Pause();
                 }
-
-                flag = 1;
             }
         }
-        else if(flag == 1)
-        {
-            if (Input.GetKeyDown(KeyCode.Escape))
-            {
+    }
+
+    public void BtnResume()
+    {
                 can.enabled = false;
                 Time.timeScale = 1;
                 Cursor.visible = false;
@@ -45,9 +60,14 @@ public class Pause : MonoBehaviour
                 {
                     source.Play();
                 }
-
-                flag = 0;
-            }
-        }
     }
+
+    public void BtnMenu()
+    {
+        can.enabled = false;
+        menu.enabled = true;
+        SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+    }
+
+
 }

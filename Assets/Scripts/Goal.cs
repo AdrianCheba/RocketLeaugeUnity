@@ -13,6 +13,7 @@ public class Goal : MonoBehaviour
     public float targetTime = 0;
     public int targetTime2 = 0;
     public int targetTime3 = 0;
+   
 
     private void Start()
     {
