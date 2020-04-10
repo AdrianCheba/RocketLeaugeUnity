@@ -15,6 +15,8 @@ public class Pause : MonoBehaviour
     public GameObject ball;
     public GameObject car;
     public Goal goal;
+    Camera mainCam;
+    public CameraController cC;
     Vector3 startPos;
 
     void Start()
@@ -29,6 +31,7 @@ public class Pause : MonoBehaviour
         car = GameObject.FindGameObjectWithTag("Player");
         startPos = car.transform.localPosition;
         goal = ball.GetComponent<Goal>();
+
     }
 
     void Update()
@@ -36,6 +39,7 @@ public class Pause : MonoBehaviour
         if (menu.enabled == false & menu2.enabled == false & menu3.enabled == false) {
             if (Input.GetKeyDown(KeyCode.Escape))
             {
+                cC.enabled = false;
                 can.enabled = true;
                 Time.timeScale = 0;
                 Cursor.visible = true;
@@ -47,6 +51,8 @@ public class Pause : MonoBehaviour
                 }
             }
         }
+        mainCam = Camera.main;
+        cC = mainCam.GetComponent<CameraController>();
     }
 
     public void BtnResume()
@@ -60,6 +66,7 @@ public class Pause : MonoBehaviour
                 {
                     source.Play();
                 }
+        cC.enabled = true;
     }
 
     public void BtnMenu()

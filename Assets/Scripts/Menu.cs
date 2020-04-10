@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityStandardAssets.Vehicles.Car;
 
 public class Menu : MonoBehaviour
 {
@@ -10,6 +11,7 @@ public class Menu : MonoBehaviour
     public Canvas carMenu;
     public Canvas groundMenu;
     public Canvas pause;
+    public Canvas end;
     public Button btnStart;
     public Button btnPlay;
     public Button btnPlay2;
@@ -25,7 +27,10 @@ public class Menu : MonoBehaviour
     public GameObject Ground;
     public GameObject Ground2;
     public GameObject Ground3;
+    public CarController carC;
+    public Text speedometer;
     Vector3 startPos;
+
 
     void Start()
     {
@@ -34,6 +39,7 @@ public class Menu : MonoBehaviour
         pause = pause.GetComponent<Canvas>();
         carMenu = carMenu.GetComponent<Canvas>();
         groundMenu = groundMenu.GetComponent<Canvas>();
+        end = end.GetComponent<Canvas>();
         btnStart = btnStart.GetComponent<Button>();
         btnPlay = btnPlay.GetComponent<Button>();
         btnPlay2 = btnPlay2.GetComponent<Button>();
@@ -50,11 +56,14 @@ public class Menu : MonoBehaviour
         Ground2 = GameObject.Find("FootballPitch2");
         Ground3 = GameObject.Find("FootballPitch3");
         startPos = car1.transform.localPosition;
+        speedometer = speedometer.GetComponent<Text>();
         HUD.enabled = false;
         carMenu.enabled = false;
         groundMenu.enabled = false;
         pause.enabled = false;
+        end.enabled = false;
         Time.timeScale = 0;
+        carC = car1.GetComponent<CarController>();
     }
 
 
@@ -71,6 +80,7 @@ public class Menu : MonoBehaviour
         car3.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
+        carC = car1.GetComponent<CarController>();
     } 
 
     public void BtnPlay2()
@@ -81,6 +91,8 @@ public class Menu : MonoBehaviour
         car3.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
+        carC = car2.GetComponent<CarController>();
+
     } 
 
     public void BtnPlay3()
@@ -91,6 +103,7 @@ public class Menu : MonoBehaviour
         car1.SetActive(false);
         carMenu.enabled = false;
         groundMenu.enabled = true;
+        carC = car3.GetComponent<CarController>();
     } 
     
     public void BtnPlay4()
@@ -157,6 +170,11 @@ public class Menu : MonoBehaviour
     public void BtnQuit()
     {
         Application.Quit();
+    }
+
+    private void FixedUpdate()
+    {
+        speedometer.text = "" + (int)carC.speed;
     }
 
 }

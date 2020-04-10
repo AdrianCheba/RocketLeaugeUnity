@@ -9,12 +9,18 @@ public class Boost : MonoBehaviour
 {
     public int counter = 0;
     public CarController carController;
+    public Image boost1;
+    public Image boost2;
     float jump = 1f;
 
 
     private void Start()
     {
         carController = gameObject.GetComponentInChildren<CarController>();
+        boost1 = boost1.GetComponent<Image>();
+        boost2 = boost2.GetComponent<Image>();
+        boost1.enabled = false;
+        boost2.enabled = false;
     }
 
     private void OnTriggerExit(Collider other)
@@ -24,7 +30,13 @@ public class Boost : MonoBehaviour
             if (other.tag == "Booster")
             {
                 counter += 1;
+                boost1.enabled = true;
             }
+        }
+
+        if(counter == 2)
+        {
+            boost2.enabled = true;
         }
     }
 
@@ -36,6 +48,8 @@ public class Boost : MonoBehaviour
             {
                 carController.m_Rigidbody.velocity = ((carController.m_Topspeed / 3.6f) * carController.m_Rigidbody.velocity.normalized) * 2;
                 counter = 0;
+                boost1.enabled = false;
+                boost2.enabled = false;
             }  
         }
 

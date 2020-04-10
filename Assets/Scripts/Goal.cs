@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class Goal : MonoBehaviour
 {
+    public Canvas end;
     public int goal = 0;
     public int goal2 = 0;
     public Text goalTxt1;
@@ -13,30 +14,31 @@ public class Goal : MonoBehaviour
     public float targetTime = 0;
     public int targetTime2 = 0;
     public int targetTime3 = 0;
-   
+
+
 
     private void Start()
     {
         goalTxt1 = goalTxt1.GetComponent<Text>();
         goalTxt2 = goalTxt2.GetComponent<Text>();
         goalTxt3 = goalTxt3.GetComponent<Text>();
+        end = end.GetComponent<Canvas>();
+
     }
 
-    private void OnTriggerExit(Collider other)
+    private void OnTriggerEnter(Collider other)
 
     {
         if (other.tag == "Goal")
         {
             goal += 1;
-            transform.localPosition = new Vector3(0, 0.5f, 0);
-           
 
+            transform.localPosition = new Vector3(0, 0.5f, 0);
         }
         else if (other.tag == "Goal2")
         {
             goal2 += 1;
             transform.localPosition = new Vector3(0, 0.5f, 0);
-           
         }
     }
 
@@ -59,6 +61,9 @@ public class Goal : MonoBehaviour
             {
                 source.Pause();
             }
+            end.enabled = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.None;
         }
     }
 }
