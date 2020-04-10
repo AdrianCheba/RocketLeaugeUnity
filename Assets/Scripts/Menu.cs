@@ -5,7 +5,6 @@ using UnityEngine.UI;
 
 public class Menu : MonoBehaviour
 {
-
     public Canvas can;
     public Canvas HUD;
     public Canvas carMenu;
@@ -26,6 +25,7 @@ public class Menu : MonoBehaviour
     public GameObject Ground;
     public GameObject Ground2;
     public GameObject Ground3;
+    Vector3 startPos;
 
     void Start()
     {
@@ -49,7 +49,7 @@ public class Menu : MonoBehaviour
         Ground = GameObject.Find("FootballPitch");
         Ground2 = GameObject.Find("FootballPitch2");
         Ground3 = GameObject.Find("FootballPitch3");
-
+        startPos = car1.transform.localPosition;
         HUD.enabled = false;
         carMenu.enabled = false;
         groundMenu.enabled = false;
@@ -76,6 +76,7 @@ public class Menu : MonoBehaviour
     public void BtnPlay2()
     {
         car2.SetActive(isActiveAndEnabled);
+        car2.transform.localPosition = startPos;
         car1.SetActive(false);
         car3.SetActive(false);
         carMenu.enabled = false;
@@ -85,6 +86,7 @@ public class Menu : MonoBehaviour
     public void BtnPlay3()
     {
         car3.SetActive(isActiveAndEnabled);
+        car3.transform.localPosition = startPos;
         car2.SetActive(false);
         car1.SetActive(false);
         carMenu.enabled = false;
