@@ -77,6 +77,7 @@
     <Compile Include="Assets\Scripts\Goal.cs" />
     <Compile Include="Assets\Scripts\Menu.cs" />
     <Compile Include="Assets\Scripts\Pause.cs" />
+    <None Include="Assets\Flames Of The Phoenix\READ_ME.txt" />
     <None Include="Assets\Best Sports CARS - Pro 3D Models\README.txt" />
     <None Include="Assets\SampleScenes\Shaders\Skybox-Procedural.shader" />
     <Reference Include="Unity.TextMeshPro.Editor">

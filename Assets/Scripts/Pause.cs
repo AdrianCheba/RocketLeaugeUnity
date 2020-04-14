@@ -55,6 +55,23 @@ public class Pause : MonoBehaviour
         if(Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.Space))
         {
             menu.enabled = false;
+            menu2.enabled = false;
+            menu3.enabled = false;
+        }  if(Input.GetKey(KeyCode.A) & Input.GetKey(KeyCode.Space))
+        {
+            menu.enabled = false;
+            menu2.enabled = false;
+            menu3.enabled = false;
+        }  if(Input.GetKey(KeyCode.D) & Input.GetKey(KeyCode.Space))
+        {
+            menu.enabled = false;
+            menu2.enabled = false;
+            menu3.enabled = false;
+        }  if(Input.GetKey(KeyCode.S) & Input.GetKey(KeyCode.Space))
+        {
+            menu.enabled = false;
+            menu2.enabled = false;
+            menu3.enabled = false;
         }
 
     }

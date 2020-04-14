@@ -12,6 +12,7 @@ public class Boost : MonoBehaviour
     public Image boost1;
     public Image boost2;
     float jump = 1f;
+    public ParticleSystem ps;
 
 
     private void Start()
@@ -21,6 +22,10 @@ public class Boost : MonoBehaviour
         boost2 = boost2.GetComponent<Image>();
         boost1.enabled = false;
         boost2.enabled = false;
+        ps = ps.GetComponent<ParticleSystem>();
+
+        ps.Stop();
+
     }
 
     private void OnTriggerExit(Collider other)
@@ -50,6 +55,7 @@ public class Boost : MonoBehaviour
                 counter = 0;
                 boost1.enabled = false;
                 boost2.enabled = false;
+                ps.Play();
             }  
         }
 

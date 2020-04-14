@@ -17,6 +17,7 @@ public class Goal : MonoBehaviour
     public GameObject car;
     Camera mainCam;
     public CameraController cC;
+    public Rigidbody rB;
 
 
 
@@ -27,6 +28,7 @@ public class Goal : MonoBehaviour
         goalTxt3 = goalTxt3.GetComponent<Text>();
         end = end.GetComponent<Canvas>();
         car = GameObject.FindGameObjectWithTag("Player");
+        rB = gameObject.GetComponent<Rigidbody>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -35,13 +37,17 @@ public class Goal : MonoBehaviour
         if (other.tag == "Goal")
         {
             goal += 1;
-
+            rB.constraints = RigidbodyConstraints.FreezeAll;
             transform.localPosition = new Vector3(0, 0.5f, 0);
+            rB.constraints = RigidbodyConstraints.None;
+
         }
         else if (other.tag == "Goal2")
         {
             goal2 += 1;
+            rB.constraints = RigidbodyConstraints.FreezeAll;
             transform.localPosition = new Vector3(0, 0.5f, 0);
+            rB.constraints = RigidbodyConstraints.None;
         }
     }
 
