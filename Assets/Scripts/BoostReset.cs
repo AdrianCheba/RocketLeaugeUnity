@@ -11,13 +11,13 @@ public class BoostReset : MonoBehaviour
     Vector3 orginalPos;
     public float targetTime = 60.0f;
     int flaga;
+    int flaga2 = 0;
 
     private void Start()
     {
         orginalPos = transform.localPosition;
         car = GameObject.FindGameObjectWithTag("Player");
-        partner = GameObject.FindGameObjectWithTag("Player");
-        b = partner.GetComponent<Boost>();
+       
     }
 
     private void OnTriggerEnter(Collider other)
@@ -44,6 +44,22 @@ public class BoostReset : MonoBehaviour
             }
         }
         
+            
+        if ((transform.localPosition.y < 1.16f) & flaga2 == 0)
+        {
+            transform.Translate(new Vector3(0, 0.4f, 0) * Time.deltaTime);
+        }
+
+        if ((transform.localPosition.y > 0.39f) & flaga2 == 1)
+        {
+            transform.Translate(new Vector3(0, -0.4f, 0) * Time.deltaTime);
+        }
+
+        if (transform.localPosition.y > 1.15f) flaga2 = 1;
+        if (transform.localPosition.y < 0.40f) flaga2 = 0;
+
+        partner = GameObject.FindGameObjectWithTag("Player");
+        b = partner.GetComponent<Boost>();
     }
     void timerEnded()
     {

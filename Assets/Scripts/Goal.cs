@@ -14,6 +14,9 @@ public class Goal : MonoBehaviour
     public float targetTime = 0;
     public int targetTime2 = 0;
     public int targetTime3 = 0;
+    public GameObject car;
+    Camera mainCam;
+    public CameraController cC;
 
 
 
@@ -23,7 +26,7 @@ public class Goal : MonoBehaviour
         goalTxt2 = goalTxt2.GetComponent<Text>();
         goalTxt3 = goalTxt3.GetComponent<Text>();
         end = end.GetComponent<Canvas>();
-
+        car = GameObject.FindGameObjectWithTag("Player");
     }
 
     private void OnTriggerEnter(Collider other)
@@ -64,6 +67,10 @@ public class Goal : MonoBehaviour
             end.enabled = true;
             Cursor.visible = true;
             Cursor.lockState = CursorLockMode.None;
+            cC.enabled = false;
         }
+
+        mainCam = Camera.main;
+        cC = mainCam.GetComponent<CameraController>();
     }
 }

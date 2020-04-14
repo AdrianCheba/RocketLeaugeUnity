@@ -17,7 +17,6 @@ public class Pause : MonoBehaviour
     public Goal goal;
     Camera mainCam;
     public CameraController cC;
-    Vector3 startPos;
 
     void Start()
     {
@@ -29,7 +28,6 @@ public class Pause : MonoBehaviour
         btnResume = btnResume.GetComponent<Button>();
         ball = GameObject.Find("Ball");
         car = GameObject.FindGameObjectWithTag("Player");
-        startPos = car.transform.localPosition;
         goal = ball.GetComponent<Goal>();
 
     }
@@ -53,6 +51,12 @@ public class Pause : MonoBehaviour
         }
         mainCam = Camera.main;
         cC = mainCam.GetComponent<CameraController>();
+
+        if(Input.GetKey(KeyCode.W) & Input.GetKey(KeyCode.Space))
+        {
+            menu.enabled = false;
+        }
+
     }
 
     public void BtnResume()

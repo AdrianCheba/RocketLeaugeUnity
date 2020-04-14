@@ -64,6 +64,7 @@ public class Menu : MonoBehaviour
         end.enabled = false;
         Time.timeScale = 0;
         carC = car1.GetComponent<CarController>();
+       
     }
 
 
