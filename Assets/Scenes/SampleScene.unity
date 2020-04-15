@@ -12646,7 +12646,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.3
-  far clip plane: 10000
+  far clip plane: 1000
   field of view: 55
   orthographic: 0
   orthographic size: 5
@@ -43764,6 +43764,7 @@ MonoBehaviour:
   targetTime3: 0
   car: {fileID: 0}
   cC: {fileID: 0}
+  rB: {fileID: 0}
 --- !u!1 &2134074250
 GameObject:
   m_ObjectHideFlags: 0
